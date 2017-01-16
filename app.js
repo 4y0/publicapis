@@ -18,6 +18,12 @@ Handle 404
 */
 app.use(mosh.initMoshErrorHandler);
 
-//Start app
-//can do stuff like sync models or any other thing needing bootstrap before listening
-app.listen(appConfig.port);
+
+var stage = process.env.NODE_ENV || "development";
+if (stage === "development" || stage === "test" || stage === "local" || stage === "production") {
+  models.sequelize.sync({force: false}).then(function () {
+    app.listen(appConfig.port, function () {
+      console.log([appConfig.name, 'is running on port', appConfig.port.toString()].join(" "));
+    });
+  });
+}
