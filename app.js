@@ -5,14 +5,14 @@ var appConfig  = require('./config/app');
 var bodyParser = require('body-parser');
 
 var app    = express();
-var routes = require('./routes');
+var routes = require('./routes/v1');
 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(mosh.initMosh);
-app.use(routes); //API Routes definition
+app.use("/api/v1/", routes); //API Routes definition
 /*
 Handle 404
 */
