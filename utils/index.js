@@ -70,6 +70,17 @@ function json_send(res, data, message, status, status_code, meta){
 }
 
 
+
+MWV_UTILS.er = function (message, code){
+
+	code = code || 'SYSERR';
+	message = message || 'Some error occured';
+
+	throw {code:code, message:message};
+
+}
+
+
 MWV_UTILS.jsonS = function (res, data, message, meta) {
 	json_send(res, data, message, 'success', 200, meta);
 }
