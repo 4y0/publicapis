@@ -1,3 +1,19 @@
+
+/*
+Attempt loading env files
+*/
+try{
+	var envJSON = require('./config/env.json');
+	for(var envProp in envJSON){
+		process.env[envProp] = envJSON[envProp];
+	}
+	//console.log(envJSON);
+}
+catch (e){
+	console.log(e);
+}
+//========================
+
 var mosh       = require('mosh');
 var models     = require('./models');
 var express    = require('express');

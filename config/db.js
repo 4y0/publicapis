@@ -5,17 +5,17 @@ module.exports = {
       "storage": "./db.local.sqlite"
     }, 
     "development": {
-      "username": process.env.DEVUN || "123",
-      "password": process.env.DEVPW || "mAsterpas-.",
-      "database": process.env.DEVDB || "SOMEPW",
-      "host": process.env.DEVHOST || "SOMEHOST",
+      "username": process.env.DEVUN,
+      "password": process.env.DEVPW,
+      "database": process.env.DEVDB,
+      "host": process.env.DEVHOST,
       "dialect": "mysql"
     },
     "test": {
-      "username": process.env.TESTUN || "pwc-user2",
-      "password": process.env.TESTPW || "LYmujLYxEMBpHdEW",
-      "database": process.env.TESTDB || "citidev",
-      "host": process.env.TESTHOST || "127.0.0.1",
+      "username": process.env.TESTUN,
+      "password": process.env.TESTPW,
+      "database": process.env.TESTDB,
+      "host": process.env.TESTHOST,
       "dialect": "mysql"
     },
     "production": {
