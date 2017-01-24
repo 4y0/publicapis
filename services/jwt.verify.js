@@ -1,7 +1,7 @@
 var q = require('q');
 var morx = require('morx'); 
 var appConfig = require('../config/app');
-var util = require('../utils'); 
+var util = require('mt1l'); 
 var jwt = require('jsonwebtoken');
 
 var spec = morx.spec({})

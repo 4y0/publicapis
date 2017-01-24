@@ -2,7 +2,7 @@ var q = require('q');
 var morx = require('morx');
 var md5 = require('md5');
 var appConfig = require('../config/app');
-var util = require('../utils');
+var util = require('mt1l'); 
 var models = require('../models');
 var jwtSign = require('./jwt.sign');
 
