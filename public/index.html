@@ -1,0 +1,136 @@
+<html ng-app="publicapis">
+<head>
+	<title> PUBLIC APIS </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+</head>
+<body ng-controller="paCtrl">
+
+	<div class="container-fluid main">
+
+		<div class="row controlPane">
+
+			<div class="col-md-3">
+				<input class="form-control" type="text" placeholder="API" ng-model="search.API" />
+			</div>
+
+			<div class="col-md-3">
+				<input class="form-control" type="text" placeholder="DESCRIPTION" ng-model="search.Description" />
+			</div>
+
+			<div class="col-md-2">
+				<select class="form-control" ng-model="search.Category" >
+					<option value=""> =Select Category= </option>
+					<option value="Animals">Animals</option>
+					<option value="Anime">Anime</option>
+					<option value="Anti-Malware">Anti-Malware</option>
+					<option value="Art & Design">Art & Design</option>
+					<option value="Books">Books</option>
+					<option value="Business">Business</option>
+					<option value="Calendar">Calendar</option>
+					<option value="Cloud Storage & File Sharing">Cloud Storage & File Sharing</option>
+					<option value="Currency Exchange">Currency Exchange</option>
+					<option value="Data Access">Data Access</option>
+					<option value="Data Validation">Data Validation</option>
+					<option value="Development">Development</option>
+					<option value="Documents & Productivity">Documents & Productivity</option>
+					<option value="Environment">Environment</option>
+					<option value="Finance">Finance</option>
+					<option value="Food & Drink">Food & Drink</option>
+					<option value="Fraud Prevention">Fraud Prevention</option>
+					<option value="Games & Comics">Games & Comics</option>
+					<option value="Geocoding">Geocoding</option>
+					<option value="Health">Health</option>
+					<option value="Machine Learning">Machine Learning</option>
+					<option value="Math">Math</option>
+					<option value="Music">Music</option>
+					<option value="News">News</option>
+					<option value="Open Source projects">Open Source projects</option>
+					<option value="Personality">Personality</option>
+					<option value="Photography">Photography</option>
+					<option value="Science">Science</option>
+					<option value="Security">Security</option>
+					<option value="Shopping">Shopping</option>
+					<option value="Social">Social</option>
+					<option value="Sports & Fitness">Sports & Fitness</option>
+					<option value="Transportation">Transportation</option>
+					<option value="University">University</option>
+					<option value="Vehicle">Vehicle</option>
+					<option value="Video">Video</option>
+					<option value="Weather">Weather</option>
+				</select>
+			</div>
+
+			<div class="col-md-2">
+				<select class="form-control" ng-model="search.HTTPS" >
+					<option value=""> =HTTPS FILTER= </option>
+					<option value="Yes"> YES </option>
+					<option value="No"> NO </option>
+				</select>
+			</div>
+
+			<div class="col-md-2">
+				<input class="form-control" type="text" placeholder="AUTH" ng-model="search.Auth" />
+			</div>
+
+			<!-- <div class="col-md-1">
+				<input class="form-control" type="text" placeholder="LINK" ng-model="search.Link" />
+			</div> -->
+
+		</div>
+
+		<hr />
+
+		<div style="height:400px; overflow:scroll">
+
+			<table class="table table-bordered table-hover table-responsive">
+				<thead>
+					<tr>
+						<th> API </th>
+						<th> Description </th>
+						<th> Category </th> 
+						<th> HTTPS </th>
+						<th> Auth </th>
+						<th> Link </th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					<tr ng-repeat="api in APIS | filter:search:false">
+						<td> {{api.API}} </td>
+						<td> {{api.Description}} </td>
+						<td> {{api.Category}} </td>
+						<td> {{api.HTTPS}} </td>
+						<td> {{api.Auth}} </td>
+						<td> <a href="{{api.Link}}" target="_blank">Go!</a> </td>
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+
+	</div>
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+	  <div class="container-fluid">
+	    <div class="navbar-header w100">
+	      <a class="navbar-brand brand-link pull-left" href="https://github.com/4y0">
+	      	Created with ❤️ by @4y0
+	      </a>
+	      <a class="navbar-brand brand-link pull-right" href="https://github.com/toddmotto/public-apis">
+	      	INSPIRED BY TODD MOTTO'S ORIGINAL CURATION ON https://github.com/toddmotto/public-apis
+	      </a>
+	    </div>
+	     
+	  </div>
+	</nav>
+
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="/js/apis.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>

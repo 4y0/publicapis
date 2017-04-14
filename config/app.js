@@ -1,6 +1,6 @@
 module.exports = {
-	port:process.env.PORT || 3959,
-	name: process.env.APPNAME || 'APP NAME',
+	port:process.env.PORT || 9912,
+	name: process.env.APPNAME || 'PUBLICAPIS',
 	salt: process.env.PWSALT || '@#$%!!&^*---0981928',
 	tokenExpiration:"5h",
 	JWTSECRET:process.env.JWTSECRET || '$*%&*$-CITIDEV-(*#(($*#'
